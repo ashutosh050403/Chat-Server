@@ -29,10 +29,14 @@ After connecting, type these commands:
 | `PING` | Check if the server is still alive. Server replies `PONG`. |
 | `QUIT` | (Optional if added in code) Leave the chat. |
 
-Example:
-LOGIN Alice
+**Example:**
+```
+LOGIN Ashu
 OK
 MSG Hello everyone!
+```
+
+---
 
 ## What You Need
 
@@ -41,115 +45,82 @@ MSG Hello everyone!
 Check if Java is installed:
 ```bash
 java -version
-
 How to Run
-1. Open a terminal in the folder where you saved ChatServer.java.
-2. Compile the code:
+Open a terminal in the folder where you saved ChatServer.java.
+
+Compile the code:
 javac ChatServer.java
 
-3. Start the server:
+Start the server:
 java ChatServer
 
 
 You should see:
-
 ChatServer listening on port 4000
-
-
 The server is now waiting for people to join.
 
 How to Connect Clients
-
 You can open more terminals to act as different users.
 
-If you are on Windows
-
+If you are on Windows-
 Using Ncat
 
-If Telnet is not working or you want a simpler way:
-
-Install Nmap
- which includes ncat.
+Install Nmap which includes ncat.
 
 Then open a terminal and type:
-
 ncat localhost 4000
-
-
 Once connected, type:
-
 LOGIN Ashu
 
+
 Example Chat
-
 Client 1 (Ashu):
-
 LOGIN Ashu
 OK
 MSG Hello everyone!
 
-
 Client 2 (Dev):
-
 LOGIN Dev
 OK
 MSG Hi Ashu!
 
-
 Both clients will see:
-
 MSG Ashu Hello everyone!
-MSG Dev Hi Alice!
-
+MSG Dev Hi Ashu!
 
 If Ashu closes her terminal or presses Ctrl + C, Dev will see:
-
 INFO Ashu disconnected
-
 Disconnecting
-
 To leave the chat:
 
-If using ncat or nc → press Ctrl + C
+If using ncat or nc → press Ctrl + C.
 
 Common Problems and Fixes
 1. ERR expected-login
-
 You forgot to log in. Type:
-
 LOGIN <yourname>
-
-
 and press Enter right after connecting.
 
 2. ERR username-taken
-
 Someone else is already using that username. Try another name.
 
 3. ERR login-timeout
-
-You waited too long after connecting. Reconnect and type LOGIN <username> quickly.
+You waited too long after connecting. Reconnect and type:
+LOGIN <username>
+quickly.
 
 4. ERR unknown-command
-
-You typed something that the server doesn’t understand.
+You typed something the server doesn’t understand.
 Use one of the supported commands (MSG, WHO, DM, PING, etc.).
 
 5. Connection refused or Connection timed out
-
 The server is not running. Start it with:
-
 java ChatServer
 
+
 6. 'nc' is not recognized
-
-On Windows, use ncat.
-
----
-
+On Windows, use ncat instead.
+```
 ## Screen Recording
-
 You can watch the short demo here:
-
-[Chat Server Demo (Google Drive)](https://drive.google.com/file/d/1Plkuf6Yr5aRHEYaxPu5nOp3Yal8OC9L7/view)
-
+Chat Server Demo (Google Drive) (https://drive.google.com/file/d/1Plkuf6Yr5aRHEYaxPu5nOp3Yal8OC9L7/view?usp=sharing)
