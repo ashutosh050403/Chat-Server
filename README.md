@@ -145,5 +145,9 @@ java ChatServer
 
 On Windows, use ncat.
 
+## Screen Recording
+
+You can watch the short demo here:
+
 [Chat Server Demo (Google Drive)](https://drive.google.com/file/d/1Plkuf6Yr5aRHEYaxPu5nOp3Yal8OC9L7/view)
 
